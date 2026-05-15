@@ -1,7 +1,6 @@
-// En dev : http://localhost:3001 | En prod : remplacer par l'URL Railway
 const API = window.location.hostname === 'localhost'
   ? 'http://localhost:3001'
-  : 'https://VOTRE-APP.up.railway.app';  // ← à mettre à jour après déploiement
+  : 'https://mon-portfolio-wcgl.onrender.com';
 
 // ── Utilitaires ────────────────────────────────────────────────────────────
 async function fetchJSON(url) {

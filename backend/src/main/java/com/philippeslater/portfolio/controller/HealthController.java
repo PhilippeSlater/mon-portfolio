@@ -12,6 +12,14 @@ import java.util.Map;
 @RequestMapping("/api")
 public class HealthController {
 
+    @GetMapping
+    public ResponseEntity<Map<String, String>> root() {
+        return ResponseEntity.ok(Map.of(
+            "status", "ok",
+            "timestamp", Instant.now().toString()
+        ));
+    }
+
     @GetMapping("/health")
     public ResponseEntity<Map<String, String>> health() {
         return ResponseEntity.ok(Map.of(

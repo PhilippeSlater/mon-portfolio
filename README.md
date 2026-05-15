@@ -79,16 +79,19 @@ mvn test
 
 ## Déploiement (Render)
 
-### Backend — Web Service
+### Backend — Web Service (Docker)
+
+Render ne supporte pas Java nativement ; le backend tourne via Docker.
 
 1. Créer un compte sur [render.com](https://render.com)
 2. **New → Web Service** → connecter ce repo GitHub
-3. Configurer :
+3. Sélectionner **Docker** comme environnement
+4. Configurer :
    - **Root Directory** : `backend`
-   - **Build Command** : `mvn clean package -DskipTests`
-   - **Start Command** : `java -jar target/portfolio-1.0.0.jar`
-4. La variable `PORT` est injectée automatiquement par Render — aucune config requise
-5. Render génère une URL publique (ex. `https://mon-portfolio-api.onrender.com`)
+   - **Dockerfile Path** : `./Dockerfile`
+5. Le fichier `render.yaml` à la racine du repo configure le reste automatiquement
+6. La variable `PORT` est injectée automatiquement par Render — aucune config requise
+7. Render génère une URL publique (ex. `https://portfolio-api.onrender.com`)
 
 ### Frontend — Static Site
 
