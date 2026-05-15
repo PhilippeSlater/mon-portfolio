@@ -44,9 +44,9 @@ class ProjectControllerTest {
 
     @Test
     void getById_retourneProjet() throws Exception {
-        mockMvc.perform(get("/api/projects/1"))
+        mockMvc.perform(get("/api/projects/2"))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.id").value(1))
+            .andExpect(jsonPath("$.id").value(2))
             .andExpect(jsonPath("$.title").isString());
     }
 
