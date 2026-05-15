@@ -116,7 +116,6 @@ Render ne supporte pas Java nativement ; le backend tourne via Docker.
 
 | Projet | Stack | Demo |
 |---|---|---|
-| Gestionnaire Kanban collaboratif | Node.js · Express · Socket.IO | — |
 | Calculatrice avec arbre d'évaluation | React · C# · REST API | [calculatrice-ui.onrender.com](https://calculatrice-ui.onrender.com/) |
 | Gestion de tournois de soccer | Kotlin · Android SDK | Production (AQBB) |
 | Portfolio API (ce projet) | Java 21 · Spring Boot 3 · Maven | Ce site |

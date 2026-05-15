@@ -11,13 +11,6 @@ import java.util.Optional;
 public class InMemoryProjectRepository implements ProjectRepository {
 
     private static final List<Project> DATA = List.of(
-        new Project(1,
-            "Gestionnaire de tâches Kanban collaboratif",
-            "Application web Kanban full-stack avec collaboration en temps réel. Plusieurs utilisateurs gèrent des projets simultanément avec mises à jour instantanées via Socket.IO.",
-            List.of("Node.js", "Express", "Socket.IO", "JavaScript", "HTML/CSS"),
-            "fullstack", "https://github.com/philippe-slater/task-manager", null,
-            List.of("Synchronisation temps réel via Socket.IO", "API REST complète (tâches, projets, utilisateurs)", "Architecture client-serveur avec état synchronisé"),
-            2025, true),
         new Project(2,
             "Calculatrice avec arbre d'évaluation",
             "Calculatrice full-stack qui visualise l'arbre d'évaluation des expressions mathématiques pour illustrer l'ordre de priorité des opérateurs.",
