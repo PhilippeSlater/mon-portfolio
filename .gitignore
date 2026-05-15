@@ -1,0 +1,25 @@
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+.mvn/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE
+.idea/
+*.iml
+*.iws
+.vscode/
+*.swp
+
+# Environnement
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PDFs (briefs locaux, ne pas commiter)
+*.pdf

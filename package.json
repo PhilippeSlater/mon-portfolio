@@ -1,0 +1,13 @@
+{
+  "name": "mon-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio de Philippe Slater — Java Spring Boot + HTML/CSS/JS",
+  "scripts": {
+    "dev": "cd backend && mvnw.cmd spring-boot:run",
+    "build": "cd backend && mvnw.cmd package -DskipTests",
+    "test": "cd backend && mvnw.cmd test"
+  },
+  "engines": {
+    "node": "N/A — backend Java, voir backend/pom.xml"
+  }
+}
