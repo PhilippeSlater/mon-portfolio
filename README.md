@@ -1,6 +1,6 @@
 # Portfolio — Philippe Slater
 
-Portfolio web professionnel avec API REST en **Java Spring Boot**, déployé sur Railway.
+Portfolio web professionnel avec API REST en **Java Spring Boot**, déployé sur Render.
 
 **Demo :** _[à remplir après déploiement]_  
 **API :** `GET /api/projects` · `GET /api/skills`
@@ -16,7 +16,7 @@ Portfolio web professionnel avec API REST en **Java Spring Boot**, déployé sur
 | Build | Maven | 3.9+ |
 | Frontend | HTML5 + CSS3 + JavaScript vanilla | — |
 | Tests | JUnit 5 + MockMvc + Mockito | 5.x |
-| Hébergement | Railway (JAR Spring Boot) | — |
+| Hébergement | Render (backend Web Service + frontend Static Site) | — |
 
 ---
 
@@ -77,13 +77,34 @@ mvn test
 
 ---
 
-## Déploiement (Railway)
+## Déploiement (Render)
 
-1. Créer un compte sur [railway.app](https://railway.app)
-2. **New Project → Deploy from GitHub repo** → sélectionner ce repo
-3. Définir le **Root Directory** : `backend`
-4. Ajouter la variable d'environnement `PORT=8080` (Railway gère le port automatiquement)
-5. Railway génère une URL publique — l'ajouter dans le README
+### Backend — Web Service
+
+1. Créer un compte sur [render.com](https://render.com)
+2. **New → Web Service** → connecter ce repo GitHub
+3. Configurer :
+   - **Root Directory** : `backend`
+   - **Build Command** : `mvn clean package -DskipTests`
+   - **Start Command** : `java -jar target/portfolio-1.0.0.jar`
+4. La variable `PORT` est injectée automatiquement par Render — aucune config requise
+5. Render génère une URL publique (ex. `https://mon-portfolio-api.onrender.com`)
+
+### Frontend — Static Site
+
+1. **New → Static Site** → connecter ce repo GitHub
+2. Configurer :
+   - **Root Directory** : `frontend`
+   - **Build Command** : _(laisser vide)_
+   - **Publish Directory** : `.`
+3. Avant de déployer, mettre à jour l'URL de l'API dans `frontend/js/app.js` :
+   ```js
+   const API = window.location.hostname === 'localhost'
+     ? 'http://localhost:3001'
+     : 'https://mon-portfolio-api.onrender.com'; // ← URL du Web Service
+   ```
+
+> **Note :** sur le plan gratuit Render, le backend s'endort après 15 min d'inactivité. Le premier appel API peut prendre ~30 secondes.
 
 ---
 
@@ -110,7 +131,7 @@ mvn test
 
 - [ ] Remplacer `InMemoryRepository` par JPA + PostgreSQL
 - [ ] Ajouter un endpoint `POST /api/contact` (formulaire de contact)
-- [ ] Intégrer GitHub Actions CI (build + tests automatiques)
+- [x] Intégrer GitHub Actions CI (build + tests automatiques)
 - [ ] Ajouter Swagger/OpenAPI pour documenter l'API
 
 ---
