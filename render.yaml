@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: portfolio-api
+    env: java
+    rootDir: backend
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/portfolio-1.0.0.jar
+    healthCheckPath: /api/health
+    plan: free
