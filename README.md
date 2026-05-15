@@ -2,8 +2,9 @@
 
 Portfolio web professionnel avec API REST en **Java Spring Boot**, déployé sur Render.
 
-**Demo :** _[à remplir après déploiement]_  
-**API :** `GET /api/projects` · `GET /api/skills`
+**Demo :** https://mon-portfolio-ui.onrender.com/  
+**API :** https://mon-portfolio-wcgl.onrender.com/  
+**Endpoints :** `GET /api/projects` · `GET /api/skills` · `GET /api/health`
 
 ---
 
@@ -91,7 +92,7 @@ Render ne supporte pas Java nativement ; le backend tourne via Docker.
    - **Dockerfile Path** : `./Dockerfile`
 5. Le fichier `render.yaml` à la racine du repo configure le reste automatiquement
 6. La variable `PORT` est injectée automatiquement par Render — aucune config requise
-7. Render génère une URL publique (ex. `https://portfolio-api.onrender.com`)
+7. Render génère une URL publique : `https://mon-portfolio-wcgl.onrender.com`
 
 ### Frontend — Static Site
 
@@ -104,7 +105,7 @@ Render ne supporte pas Java nativement ; le backend tourne via Docker.
    ```js
    const API = window.location.hostname === 'localhost'
      ? 'http://localhost:3001'
-     : 'https://mon-portfolio-api.onrender.com'; // ← URL du Web Service
+     : 'https://mon-portfolio-wcgl.onrender.com';
    ```
 
 > **Note :** sur le plan gratuit Render, le backend s'endort après 15 min d'inactivité. Le premier appel API peut prendre ~30 secondes.

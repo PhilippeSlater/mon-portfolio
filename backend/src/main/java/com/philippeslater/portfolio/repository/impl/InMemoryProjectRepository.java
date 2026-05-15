@@ -36,7 +36,7 @@ public class InMemoryProjectRepository implements ProjectRepository {
             "Portfolio API — Java Spring Boot",
             "Ce portfolio lui-même : API REST construite avec Java Spring Boot, principes SOLID et injection de dépendances Spring IoC.",
             List.of("Java 21", "Spring Boot 3", "Spring IoC", "Maven", "JUnit 5"),
-            "fullstack", "https://github.com/philippe-slater/mon-portfolio", null,
+            "fullstack", "https://github.com/philippe-slater/mon-portfolio", "https://mon-portfolio-ui.onrender.com/",
             List.of("Architecture en couches : Controller → Service → Repository", "Principes SOLID appliqués (IoC, interfaces, SRP)", "Tests MockMvc et JUnit 5"),
             2025, true),
         new Project(5,
