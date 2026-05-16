@@ -2,7 +2,7 @@
 
 ## Vue d'ensemble
 
-Application web monolithique déployée sur Railway (JAR Spring Boot).
+Application web monolithique déployée sur Render.
 Le même processus sert l'API REST (`/api/*`) **et** le frontend statique (`/`).
 
 ```
